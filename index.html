@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <py-env>
+    - pandas
+  </py-env>
+  <title>Search Using Incidence Matrix</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 100vw;
+      min-height: 100vh;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .search-bar {
+      position: absolute;
+      left: 50%;
+      top: 10%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .input-control {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input {
+      font-size: larger;
+      width: 60vw;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 15px;
+      padding-right: 15px;
+      border: 1px solid #cfcfcf;
+      border-radius: 5px;
+    }
+
+    label {
+      font-size: 30px;
+    }
+
+    .button {
+      margin-left: 20px;
+      display: block;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 15px;
+      padding-right: 15px;
+      font-size: larger;
+      border: none;
+      background-color: rgb(116, 167, 249);
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .box {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -40%);
+      position: absolute;
+      width: 70vw;
+      height: 70vh;
+      border: 1px solid #cfcfcf;
+      padding: 10px;
+      border-radius: 10px;
+      overflow-y: auto;
+    }
+
+    .title{
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: larger;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="search-bar">
+    <div class="input-control">
+      <label for="text">Search</label>
+      <input type="text" id="text_search" />
+    </div>
+    <button id="btn" class="button"  pys-OnClcik="print_element">Search</button>
+  </div>
+
+  <div class="box" id="container"></div>
+  <p id="msg"></p>
+  <py-script src='./index.py' id="container-list"></py-script >
+
+</body>
+
+</html>
